@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "escola",  # Custom app for the school management system
 ]
 
 MIDDLEWARE = [
