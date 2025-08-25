@@ -21,11 +21,8 @@ class Curso(models.Model):
         ('A', 'Avançado'),
     )
     codigo = models.CharField(max_length=10)
-    nome = models.CharField(max_length=100)
     descricao = models.CharField(max_length=255, blank=False)
     nivel = models.CharField(max_length=1, null=False, blank=False, choices = NIVEL, default = 'B')
-    carga_horaria = models.IntegerField()
-    preco = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __str__(self):
         return self.codigo
