@@ -15,6 +15,11 @@ class Estudante(models.Model):
     
 
 class Curso(models.Model):
+    NIVEL = (
+        ('B', 'Básico'),
+        ('I', 'Intermediário'),
+        ('A', 'Avançado'),
+    )
     codigo = models.CharField(max_length=10)
     nome = models.CharField(max_length=100)
     descricao = models.CharField(max_length=255, blank=False)
