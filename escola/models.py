@@ -15,6 +15,7 @@ class Estudante(models.Model):
     
 
 class Curso(models.Model):
+    codigo = models.CharField(max_length=10)
     nome = models.CharField(max_length=100)
     descricao = models.TextField()
     carga_horaria = models.IntegerField()
