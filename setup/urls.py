@@ -9,5 +9,5 @@ router.register("cursos", CursoViewSet, basename="Cursos")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("estudantes/", estudantes) # type: ignore
+    path('', include(router.urls))
 ]
