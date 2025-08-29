@@ -3,6 +3,10 @@ from django.urls import path
 from escola.views import EstudanteViewSet, CursoViewSet
 from rest_framework import routers
 
+router = routers.DefaultRouter()
+router.register("estudantes", EstudanteViewSet, basename="Estudante") 
+router.register("cursos", CursoViewSet, basename="Cursos")
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("estudantes/", estudantes) # type: ignore
