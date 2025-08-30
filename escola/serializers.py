@@ -9,4 +9,4 @@ class EstudanteSerializer(serializers.ModelSerializer):
 class CursoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curso
-        field = "__all__"
+        fields = "__all__"
