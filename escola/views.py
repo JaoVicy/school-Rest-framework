@@ -1,5 +1,5 @@
 from escola.models import Estudante, Curso, Matricula
-from escola.serializers import EstudanteSerializer, CursoSerializer, MatriculaSerializer
+from escola.serializers import EstudanteSerializer, CursoSerializer, MatriculaSerializer, ListMatriculasEstudanteSerializer, ListaMatriculasCursoSerializer
 from rest_framework import viewsets
 
 class EstudanteViewSet(viewsets.ModelViewSet):
