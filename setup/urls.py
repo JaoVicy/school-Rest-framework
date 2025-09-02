@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from escola.views import EstudanteViewSet, CursoViewSet, MatriculaViewSet
+from escola.views import EstudanteViewSet, CursoViewSet, MatriculaViewSet, ListaMatriculaEstudante
 from rest_framework import routers
 
 router = routers.DefaultRouter()
