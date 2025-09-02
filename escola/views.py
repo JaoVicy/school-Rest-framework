@@ -14,3 +14,8 @@ class MatriculaViewSet(viewsets.ModelViewSet):
     queryset = Matricula.objects.all()
     serializer_class = MatriculaSerializer
 
+class ListaMatriculasEstudante(generics.ListAPIView):
+    def get_queryset(self):
+        queryset = Matricula.objects.filter(estudante_id=self.kwargs['pk']) # Filtra as matrículas pelo ID do estudante
+        return queryset
+    serializer_class = ListMatriculasEstudanteSerializer
