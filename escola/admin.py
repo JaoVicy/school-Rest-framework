@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Estudante, Curso
+from .models import Estudante, Curso, Matricula
 
 class Estudantes(admin.ModelAdmin):
     list_display = ('id', 'nome', 'idade', 'email', 'cpf', 'data_nacimento', 'celular')
