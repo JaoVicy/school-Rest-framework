@@ -2,7 +2,7 @@ from escola.models import Estudante, Curso, Matricula
 from escola.serializers import EstudanteSerializer, CursoSerializer, MatriculaSerializer, ListMatriculasEstudanteSerializer, ListaMatriculasCursoSerializer
 from rest_framework import viewsets, generics
 from rest_framework.authentication import BasicAuthentication
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 
 class EstudanteViewSet(viewsets.ModelViewSet):
     authentication_classes = [BasicAuthentication]
