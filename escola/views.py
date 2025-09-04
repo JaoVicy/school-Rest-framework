@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 class EstudanteViewSet(viewsets.ModelViewSet):
     authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminUser] # Apenas administradores podem acessar
     queryset = Estudante.objects.all()
     serializer_class = EstudanteSerializer
 
