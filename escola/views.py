@@ -18,7 +18,7 @@ class CursoViewSet(viewsets.ModelViewSet):
 
 class MatriculaViewSet(viewsets.ModelViewSet):
     authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticatedOrReadOnly] # Qualquer usuário autenticado pode criar, mas apenas leitura para não autenticados
     queryset = Matricula.objects.all()
     serializer_class = MatriculaSerializer
 
