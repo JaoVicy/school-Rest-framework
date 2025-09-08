@@ -15,6 +15,11 @@ class EstudanteSerializer(serializers.ModelSerializer):
         if not name.isalpha():
             raise serializers.ValidationError("O nome deve conter apenas letras.")
         return name
+    
+    def validade_celular(self,celular):
+        if len(celular) != 13:
+            raise serializers.ValidationError("O celular deve conter no mínimo 13 caracteres.")
+        return celular
 
 class CursoSerializer(serializers.ModelSerializer):
     class Meta:
