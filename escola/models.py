@@ -20,7 +20,7 @@ class Curso(models.Model):
         ('I', 'Intermediário'),
         ('A', 'Avançado'),
     )
-    codigo = models.CharField(max_length=10)
+    codigo = models.CharField(max_length=10, unique=True) # Código do curso deve ser único
     descricao = models.CharField(max_length=255, blank=False)
     nivel = models.CharField(max_length=1, null=False, blank=False, choices = NIVEL, default = 'B')
 
