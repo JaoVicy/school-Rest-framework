@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Estudante, Curso, Matricula
+from .validators import cpf_invalido, nome_invalido, celular_invalido
 
 class EstudanteSerializer(serializers.ModelSerializer):
     class Meta:
