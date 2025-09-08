@@ -6,6 +6,11 @@ class EstudanteSerializer(serializers.ModelSerializer):
         model = Estudante
         fields = ['id', 'nome', 'idade', 'email', 'cpf', 'data_nacimento', 'celular']
 
+    def validate_cpf(self, cpf):
+        if len(cpf) != 11:
+            raise serializers.ValidationError("O CPF deve conter exatamente 11 caracteres.")
+        return cpf
+
 class CursoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curso
