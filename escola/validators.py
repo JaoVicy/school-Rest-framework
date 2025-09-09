@@ -1,4 +1,5 @@
 import re
+from validate_docbr import CPF
 
 def cpf_invalido(cpf):
     return len(cpf) != 11
