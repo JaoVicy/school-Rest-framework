@@ -15,7 +15,7 @@ class EstudanteSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"nome": "O nome deve conter apenas letras."})
         
         if celular_invalido(dados['celular']) != 13:
-            raise serializers.ValidationError({"celular": "O celular deve conter no mínimo 13 caracteres."})
+            raise serializers.ValidationError({"celular": "O celular deve seguir o modelo padrão."})
         
         return dados
 
