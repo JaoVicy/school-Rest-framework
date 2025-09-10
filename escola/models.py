@@ -8,7 +8,7 @@ class Estudante(models.Model):
     idade = models.IntegerField()
     email = models.EmailField(blank = False)
     cpf = models.CharField(max_length=11, unique=True) # CPF deve ser único
-    data_nacimento = models.DateField(null=True, blank=True)
+    data_nascimento = models.DateField(null=True, blank=True)
     celular = models.CharField(max_length=14)
 
     def __str__(self):
