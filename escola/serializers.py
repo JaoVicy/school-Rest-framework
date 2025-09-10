@@ -5,7 +5,7 @@ from .validators import cpf_invalido, nome_invalido, celular_invalido
 class EstudanteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Estudante
-        fields = ['id', 'nome', 'idade', 'email', 'cpf', 'data_nacimento', 'celular']
+        fields = ['id', 'nome', 'idade', 'email', 'cpf', 'data_nascimento', 'celular']
 
     def validate(self, dados):
         if cpf_invalido(dados['cpf']) != 11:
