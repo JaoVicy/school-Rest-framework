@@ -9,11 +9,15 @@ class EstudanteViewSet(viewsets.ModelViewSet):
 #    authentication_classes = [BasicAuthentication]
 #    permission_classes = [IsAdminUser] # Apenas administradores podem acessar
     queryset = Estudante.objects.all()
-    serializer_class = EstudanteSerializer
+    #serializer_class = EstudanteSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
     ordering_fields = ['nome']  # Permite filtrar por nome
     search_fields = ['nome', 'cpf']  # Permite busca por nome e cpf
 
+    def get_serializer_class(self):
+        if self.request.version == 'v2':
+            return EstudanteSerializerV2
+        return EstudanteSerializer
 
 class CursoViewSet(viewsets.ModelViewSet):
 #    authentication_classes = [BasicAuthentication]
