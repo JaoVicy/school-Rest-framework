@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "escola",  # Custom app for the school management system
+    "django_filters",  # For advanced filtering capabilities
 ]
 
 MIDDLEWARE = [
