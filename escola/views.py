@@ -10,6 +10,8 @@ class EstudanteViewSet(viewsets.ModelViewSet):
 #    permission_classes = [IsAdminUser] # Apenas administradores podem acessar
     queryset = Estudante.objects.all()
     serializer_class = EstudanteSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filterset_fields = ['nome']  # Permite filtrar por nome
 
 class CursoViewSet(viewsets.ModelViewSet):
 #    authentication_classes = [BasicAuthentication]
