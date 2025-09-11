@@ -12,6 +12,7 @@ class EstudanteViewSet(viewsets.ModelViewSet):
     serializer_class = EstudanteSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
     ordering_fields = ['nome']  # Permite filtrar por nome
+    search_fields = ['nome', 'cpf']  # Permite busca por nome e cpf
 
 class CursoViewSet(viewsets.ModelViewSet):
 #    authentication_classes = [BasicAuthentication]
