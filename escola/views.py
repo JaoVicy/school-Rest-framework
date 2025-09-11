@@ -3,6 +3,7 @@ from escola.serializers import EstudanteSerializer, CursoSerializer, MatriculaSe
 from rest_framework import viewsets, generics
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
+from django_filters.rest_framework import DjangoFilterBackend
 
 class EstudanteViewSet(viewsets.ModelViewSet):
 #    authentication_classes = [BasicAuthentication]
