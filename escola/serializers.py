@@ -63,4 +63,4 @@ class ListaMatriculasCursoSerializer(serializers.ModelSerializer):
 class EstudanteSerializerV2(serializers.ModelSerializer):
     class Meta:
         model = Estudante
-        fields = ['id', 'nome', 'idade', 'email', 'cpf', 'data_nascimento', 'celular']
+        fields = ['id', 'nome', 'idade', 'email', 'celular']
