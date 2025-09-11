@@ -1,14 +1,18 @@
 from escola.models import Estudante, Curso, Matricula
 from escola.serializers import EstudanteSerializer, CursoSerializer, MatriculaSerializer, ListMatriculasEstudanteSerializer, ListaMatriculasCursoSerializer
-from rest_framework import viewsets, generics
+from rest_framework import viewsets, generics, filters
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
+from django_filters.rest_framework import DjangoFilterBackend
 
 class EstudanteViewSet(viewsets.ModelViewSet):
 #    authentication_classes = [BasicAuthentication]
 #    permission_classes = [IsAdminUser] # Apenas administradores podem acessar
     queryset = Estudante.objects.all()
     serializer_class = EstudanteSerializer
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    ordering_fields = ['nome']  # Permite filtrar por nome
+    search_fields = ['nome', 'cpf']  # Permite busca por nome e cpf
 
 class CursoViewSet(viewsets.ModelViewSet):
 #    authentication_classes = [BasicAuthentication]
