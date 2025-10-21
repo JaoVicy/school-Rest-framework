@@ -1,4 +1,4 @@
-# 🏫 School API Simulation
+# 🏫 School API Simulation (Aprendizado de DRF)
 
 Este repositório contém uma simulação de sistema escolar desenvolvida com **Django Rest Framework (DRF)**.  
 O objetivo é servir como um projeto de estudo e prática para aprender os fundamentos de desenvolvimento de APIs com Django.
